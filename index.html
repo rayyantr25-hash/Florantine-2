@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Florentine – C'est La Vie | Italian Restaurant &amp; Coffee House</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef0e8;--ink:#1c2a24;--mute:#5d6a62;--wine:#6d2b36;--olive:#56673a;--line:rgba(28,42,36,.16);--card:#e3e7da;
+--serif:'Instrument Serif',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;box-sizing:border-box;
+padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+*,*::before,*::after{box-sizing:inherit;margin:0}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--sans);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--wine);outline-offset:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+#bar{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--wine);transform-origin:0 50%;transform:scaleX(0);z-index:50}
+nav{position:sticky;top:0;z-index:40;background:rgba(238,240,232,.85);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
+nav.sc{border-color:var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:68px}
+.logo{font:400 1.7rem var(--serif)}
+.links{display:flex;gap:30px;align-items:center;font-size:.95rem}
+.links .l{display:none;position:relative}
+.links .l::after{content:"";position:absolute;left:0;bottom:-3px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .35s}
+.links .l:hover::after{transform:scaleX(1);transform-origin:left}
+@media(min-width:760px){.links .l{display:inline}}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:99px;background:var(--ink);color:var(--bg);font:500 .95rem var(--sans);border:0;cursor:pointer;transition:background .3s,transform .2s}
+.btn:hover{background:var(--wine)}
+.btn.o{background:none;color:var(--ink);border:1px solid var(--ink)}
+.btn.o:hover{background:var(--ink);color:var(--bg)}
+/* hero */
+.hero{padding:clamp(40px,7vw,90px) 0 clamp(60px,9vw,110px)}
+.hg{display:grid;gap:50px;align-items:center}
+@media(min-width:900px){.hg{grid-template-columns:1.15fr .85fr}}
+h1{font-size:clamp(3.4rem,9vw,7.2rem);letter-spacing:-.02em}
+h1 .ln{display:block;overflow:hidden;padding-bottom:.08em}
+h1 .ln span{display:block;transform:translateY(105%);animation:up 1.1s cubic-bezier(.2,.8,.2,1) forwards}
+h1 .ln:nth-child(2) span{animation-delay:.12s}h1 .ln:nth-child(3) span{animation-delay:.24s}
+h1 em{color:var(--wine)}
+@keyframes up{to{transform:none}}
+.lead{max-width:40ch;margin:26px 0 34px;color:var(--mute);font-size:1.1rem;opacity:0;animation:fi 1s .6s forwards}
+.cta{display:flex;gap:12px;flex-wrap:wrap;opacity:0;animation:fi 1s .8s forwards}
+@keyframes fi{to{opacity:1}}
+.archw{position:relative;max-width:440px;margin-inline:auto;width:100%}
+.arch{aspect-ratio:3/4;border-radius:999px 999px 18px 18px;overflow:hidden;position:relative;clip-path:inset(100% 0 0 0);animation:ar 1.6s .2s cubic-bezier(.7,0,.2,1) forwards;background:linear-gradient(#f6d9b8,#e9c3a0 45%,#b9c4a2)}
+@keyframes ar{to{clip-path:inset(0)}}
+.art{position:absolute;inset:-8% 0;will-change:transform}
+.art i{position:absolute;display:block;border-radius:50%}
+.sun{width:34%;aspect-ratio:1;left:50%;top:22%;translate:-50% 0;background:#fff1cf;box-shadow:0 0 80px 30px rgba(255,236,190,.7)}
+.h1{width:120%;height:30%;left:-10%;bottom:12%;background:#7f9467}
+.h2{width:110%;height:30%;left:-30%;bottom:2%;background:#56673a}
+.h3{width:90%;height:28%;right:-25%;bottom:-8%;background:#2d4033}
+.pl{width:16%;height:34%;left:12%;bottom:6%;border-radius:60% 60% 0 0!important;background:#1c2a24}
+.pl2{width:12%;height:24%;left:24%;bottom:6%;border-radius:60% 60% 0 0!important;background:#1c2a24}
+.badge{position:absolute;right:-6%;bottom:8%;width:130px;height:130px;background:var(--bg);border-radius:50%;display:grid;place-items:center;box-shadow:0 10px 30px rgba(28,42,36,.15);opacity:0;animation:fi 1s 1.6s forwards}
+.badge svg{position:absolute;inset:8px;width:calc(100% - 16px);animation:spin 22s linear infinite}
+.badge b{font:400 1.8rem var(--serif);color:var(--wine)}
+@keyframes spin{to{rotate:360deg}}
+/* facts */
+.facts{border-block:1px solid var(--line);padding:34px 0}
+.fg{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+@media(min-width:800px){.fg{grid-template-columns:repeat(4,1fr)}}
+.fg b{display:block;font:400 2.8rem var(--serif);line-height:1}
+.fg span{color:var(--mute);font-size:.92rem}
+section{padding:clamp(70px,11vw,120px) 0}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s,transform .9s}
+.rv.in{opacity:1;transform:none}
+h2{font-size:clamp(2.4rem,5.5vw,4.2rem);letter-spacing:-.01em}
+h2 em{color:var(--wine)}
+/* menu */
+.mg{display:grid;gap:40px}
+@media(min-width:900px){.mg{grid-template-columns:.8fr 1.2fr;gap:80px}.mg .st{position:sticky;top:110px;align-self:start}}
+.mg p.s{color:var(--mute);margin-top:18px;max-width:34ch}
+.ac{border-top:1px solid var(--line)}
+.ac:last-of-type{border-bottom:1px solid var(--line)}
+.ac>button{width:100%;display:flex;justify-content:space-between;align-items:center;background:none;border:0;padding:24px 0;font:400 2rem var(--serif);color:var(--ink);cursor:pointer;text-align:left}
+.ac>button::after{content:"+";font:300 1.8rem var(--sans);transition:rotate .4s;color:var(--wine)}
+.ac.open>button::after{rotate:135deg}
+.pn{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s cubic-bezier(.3,.8,.2,1)}
+.ac.open .pn{grid-template-rows:1fr}
+.pn>div{overflow:hidden}
+.dish{padding:14px 0 18px;transition:padding-left .3s}
+.dish:hover{padding-left:12px}
+.dish b{font:400 1.35rem var(--serif);display:block}
+.dish span{color:var(--mute);font-size:.95rem}
+.note{margin-top:16px;font-size:.85rem;color:var(--mute)}
+/* moods */
+.mood{background:var(--card)}
+.cards{display:grid;gap:18px;margin-top:46px}
+@media(min-width:800px){.cards{grid-template-columns:repeat(3,1fr)}.cards .c:nth-child(2){margin-top:44px}}
+.c{background:var(--bg);border-radius:200px 200px 16px 16px;padding:36px 28px 32px;text-align:center;transition:transform .5s,box-shadow .5s}
+.c:hover{transform:translateY(-8px);box-shadow:0 24px 40px -22px rgba(28,42,36,.4)}
+.ci{width:100%;aspect-ratio:1;border-radius:999px 999px 10px 10px;margin-bottom:24px;transition:filter .5s}
+.c:hover .ci{filter:saturate(1.3)}
+.c h3{font-size:1.9rem;margin-bottom:8px}
+.c p{color:var(--mute);font-size:.95rem}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
+.tags span{border:1px solid var(--line);border-radius:99px;padding:8px 16px;font-size:.9rem;color:var(--mute)}
+/* reserve */
+.rg{display:grid;gap:44px}
+@media(min-width:860px){.rg{grid-template-columns:1fr 1fr;align-items:start}}
+form{display:grid;gap:16px}
+label{display:grid;gap:6px;font-size:.88rem;color:var(--mute)}
+input,select{width:100%;background:transparent;border:0;border-bottom:1px solid var(--ink);padding:10px 0;font:400 1.05rem var(--sans);color:var(--ink);border-radius:0}
+input:focus,select:focus{outline:0;border-color:var(--wine);box-shadow:0 1px 0 var(--wine)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.step{display:flex;align-items:center;gap:18px}
+.step button{width:38px;height:38px;border-radius:50%;border:1px solid var(--ink);background:none;font-size:1.2rem;cursor:pointer;color:var(--ink);transition:.25s}
+.step button:hover{background:var(--ink);color:var(--bg)}
+.step b{font:400 1.8rem var(--serif);min-width:1.5ch;text-align:center}
+#toast{position:fixed;left:50%;bottom:24px;translate:-50% 140%;background:var(--ink);color:var(--bg);padding:12px 22px;border-radius:99px;z-index:60;transition:translate .5s;font-size:.92rem}
+#toast.show{translate:-50% 0}
+footer{background:var(--ink);color:#c9d0c6;padding:50px 0;text-align:center}
+footer .logo{color:var(--bg);display:block;font-size:2.4rem;margin-bottom:8px}
+footer a{border-bottom:1px solid;color:#fff}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,h1 .ln span,.lead,.cta,.badge{opacity:1;transform:none}.arch{clip-path:none}}
+
+.art{inset:-8% 0 auto 0;width:100%;height:116%;object-fit:cover}
+.ci{background-size:cover!important;background-position:center!important}
+.mi{border-radius:999px 999px 14px 14px;overflow:hidden;aspect-ratio:3/4;margin-top:34px;max-width:320px;background:var(--card)}
+.mi img{width:100%;height:100%;object-fit:cover;transition:opacity .5s,transform 1.2s}
+.mi:hover img{transform:scale(1.07)}
+@media(max-width:899px){.mi{display:none}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<nav id="nav"><div class="wrap">
+  <a class="logo" href="#top">Florentine</a>
+  <div class="links"><a class="l" href="#menu">Menu</a><a class="l" href="#mood">Atmosphere</a><a class="btn" href="#reserve">Reserve</a></div>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap hg">
+  <div>
+    <h1><span class="ln"><span>Good food,</span></span><span class="ln"><span>a rooftop,</span></span><span class="ln"><span><em>unhurried.</em></span></span></h1>
+    <p class="lead">Italian plates, great coffee and desserts worth staying for. Breakfast, lunch or dinner, indoors or under the sky.</p>
+    <div class="cta"><a class="btn" href="#reserve">Reserve a table</a><a class="btn o" href="#menu">See the menu</a></div>
+  </div>
+  <div class="archw">
+    <div class="arch"><img class="art" id="art" src="https://images.unsplash.com/photo-1759050475187-674550fa911e?auto=format&fit=crop&w=2000&q=85" alt="Guests dining outdoors at Florentine"></div>
+    <div class="badge" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><path id="cp" d="M60 60m-48 0a48 48 0 1 1 96 0a48 48 0 1 1 -96 0"/></defs><text font-size="11" letter-spacing="3" fill="#1c2a24" font-family="DM Sans"><textPath href="#cp">ROOFTOP SEATING  ✦  GREAT COFFEE  ✦  GREAT DESSERT  ✦ </textPath></text></svg><b>C'est<br>la vie</b></div>
+  </div>
+</div></header>
+
+<div class="facts"><div class="wrap fg">
+  <div class="rv"><b><span data-n="4.0" data-d="1">0</span></b><span>Google rating</span></div>
+  <div class="rv"><b><span data-n="405">0</span></b><span>Guest reviews</span></div>
+  <div class="rv"><b>Rs 2–3k</b><span>Per person</span></div>
+  <div class="rv"><b>3 meals</b><span>Breakfast, lunch, dinner</span></div>
+</div></div>
+
+<section id="menu"><div class="wrap mg">
+  <div class="st rv"><h2>From the <em>kitchen</em></h2><p class="s">Pick a course to open it. Everything is made to share, or not.</p><p class="note">Sample menu for this concept. The real menu and photos come from the restaurant.</p><div class="mi"><img id="mimg" alt="Dish from the menu" loading="lazy"></div></div>
+  <div id="acs"></div>
+</div></section>
+
+<section class="mood" id="mood"><div class="wrap">
+  <h2 class="rv">A place for <em>every hour</em></h2>
+  <div class="cards">
+    <div class="c rv"><div class="ci" style="background:url(https://images.unsplash.com/photo-1637154199148-62dd57c5b6e0?auto=format&fit=crop&w=1000&q=85)"></div><h3>Morning</h3><p>Coffee, brunch and a quiet table by the window.</p></div>
+    <div class="c rv"><div class="ci" style="background:url(https://images.unsplash.com/photo-1473093226795-af9932fe5856?auto=format&fit=crop&w=1000&q=85)"></div><h3>Afternoon</h3><p>Long lunches, cold drinks and a family-friendly mood.</p></div>
+    <div class="c rv"><div class="ci" style="background:url(https://images.unsplash.com/photo-1563138216-8ff2e182ccbd?auto=format&fit=crop&w=1000&q=85)"></div><h3>Evening</h3><p>Rooftop dinners, dessert and romantic corners.</p></div>
+  </div>
+  <div class="tags rv"><span>Rooftop seating</span><span>Free Wi-Fi</span><span>Free parking</span><span>Dine-in, takeaway, delivery</span><span>Catering</span><span>Good for kids</span><span>Cards and NFC payments</span></div>
+</div></section>
+
+<section id="reserve"><div class="wrap rg">
+  <div class="rv"><h2>Save your <em>table</em></h2><p style="margin-top:18px;color:var(--mute);max-width:36ch">Choose a date and time. WhatsApp opens with your request ready to send, and the team confirms by message.</p></div>
+  <form class="rv" onsubmit="return false">
+    <label>Name<input id="nm" autocomplete="name" placeholder="Your full name"></label>
+    <div class="two"><label>Date<input id="dt" type="date"></label>
+    <label>Time<select id="tm"><option>9:00 AM</option><option>11:00 AM</option><option>1:00 PM</option><option>3:00 PM</option><option>6:00 PM</option><option selected>8:00 PM</option><option>10:00 PM</option></select></label></div>
+    <div class="two"><label>Guests<div class="step"><button type="button" id="mn" aria-label="Fewer guests">−</button><b id="gc">2</b><button type="button" id="pl" aria-label="More guests">+</button></div></label>
+    <label>Seating<select id="st"><option>Rooftop</option><option>Indoor</option><option>No preference</option></select></label></div>
+    <a class="btn" id="wa" href="#" target="_blank" rel="noopener" style="justify-content:center;margin-top:8px">Send on WhatsApp</a>
+  </form>
+</div></section>
+
+<footer><div class="wrap"><span class="logo">Florentine</span><p>C'est La Vie, Italian restaurant and coffee house</p><p style="margin-top:22px;font-size:.88rem">Demo concept by <a href="https://rayyantr25-hash.github.io/Rayvora-Studios/" target="_blank" rel="noopener">Rayvora Studios</a></p></div></footer>
+<div id="toast" role="status"></div>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+// progress + nav + arch parallax
+const art=$('#art');
+addEventListener('scroll',()=>{const h=document.documentElement;$('#bar').style.transform=`scaleX(${scrollY/(h.scrollHeight-innerHeight)})`;$('#nav').classList.toggle('sc',scrollY>30);if(scrollY<innerHeight)art.style.transform=`translateY(${scrollY*.08}px)`},{passive:true});
+// reveal + count up
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');io.unobserve(e.target);
+e.target.querySelectorAll('[data-n]').forEach(n=>{const to=+n.dataset.n,d=+n.dataset.d||0,t0=performance.now();
+(function f(t){const p=Math.min(1,(t-t0)/1400),v=to*(1-Math.pow(1-p,3));n.textContent=v.toFixed(d);if(p<1)requestAnimationFrame(f)})(t0)})}),{threshold:.2});
+$$('.rv').forEach(el=>io.observe(el));
+// menu accordion
+const M={'Breakfast & brunch':[['Shakshuka al Forno','Baked eggs in spiced tomato, herbs, sourdough'],['Ricotta Hotcakes','Whipped ricotta, honey, seasonal fruit'],['Croissant Florentine','Soft scrambled eggs, spinach, parmesan cream']],
+'Pasta & pizza':[['Truffle Tagliatelle','Fresh ribbons, mushroom cream, parmesan'],['Penne Arrabbiata','Roasted tomato, garlic, chilli, basil'],['Wood-Fired Margherita','San Marzano tomato, fior di latte, basil']],
+'Mains':[['Herb-Crusted Chicken','Lemon butter sauce, rosemary potatoes'],['Grilled Fish','Citrus glaze, charred greens, saffron rice'],['Beef Medallions','Peppercorn sauce, creamy mash']],
+'Dessert':[['Classic Tiramisu','Espresso-soaked savoiardi, mascarpone, cocoa'],['Pistachio Panna Cotta','Vanilla cream, crushed pistachio, berry coulis'],['Affogato','Vanilla gelato with hot espresso']],
+'Coffee & tea':[['Flat White','Double shot, silky milk'],['Moroccan Mint Tea','Fresh mint and green tea, served in a pot'],['Kashmiri Chai','Pink tea, crushed pistachio']]};
+$('#acs').innerHTML=Object.entries(M).map(([k,v],i)=>`<div class="ac${i?'':' open'}"><button aria-expanded="${!i}">${k}</button><div class="pn"><div>${v.map(([n,d])=>`<div class="dish"><b>${n}</b><span>${d}</span></div>`).join('')}</div></div></div>`).join('');
+const IMG={'Breakfast':'https://images.unsplash.com/photo-1637154199148-62dd57c5b6e0?auto=format&fit=crop&w=1400&q=85','Breakfast & brunch':'https://images.unsplash.com/photo-1637154199148-62dd57c5b6e0?auto=format&fit=crop&w=1400&q=85','Pasta':'https://images.unsplash.com/photo-1473093226795-af9932fe5856?auto=format&fit=crop&w=1400&q=85','Pasta & pizza':'https://images.unsplash.com/photo-1473093226795-af9932fe5856?auto=format&fit=crop&w=1400&q=85','Mains':'https://images.unsplash.com/photo-1473093226795-af9932fe5856?auto=format&fit=crop&w=1400&q=85','Dessert':'https://images.unsplash.com/photo-1631206753348-db44968fd440?auto=format&fit=crop&w=1400&q=85','Coffee & Tea':'https://images.unsplash.com/photo-1613674768015-96f159a6c147?auto=format&fit=crop&w=1400&q=85','Coffee & tea':'https://images.unsplash.com/photo-1613674768015-96f159a6c147?auto=format&fit=crop&w=1400&q=85'};
+const sw=k=>{const im=$('#mimg');im.style.opacity=0;setTimeout(()=>{im.src=IMG[k];im.onload=()=>im.style.opacity=1},250)};sw('Breakfast & brunch');
+$$('.ac>button').forEach(b=>b.onclick=()=>{sw(b.textContent);const a=b.parentElement,o=!a.classList.contains('open');$$('.ac').forEach(x=>{x.classList.remove('open');x.firstChild.setAttribute('aria-expanded',false)});if(o){a.classList.add('open');b.setAttribute('aria-expanded',true)}});
+// reservation
+let g=2;const d=$('#dt');d.value=new Date(Date.now()+864e5).toISOString().slice(0,10);d.min=new Date().toISOString().slice(0,10);
+const up=()=>{$('#gc').textContent=g;$('#wa').href='https://wa.me/?text='+encodeURIComponent(`Hi Florentine, I'd like to reserve a table.\nName: ${$('#nm').value||'-'}\nDate: ${d.value}\nTime: ${$('#tm').value}\nGuests: ${g}\nSeating: ${$('#st').value}`)};
+$('#mn').onclick=()=>{g=Math.max(1,g-1);up()};$('#pl').onclick=()=>{g=Math.min(20,g+1);up()};
+$$('form input,form select').forEach(x=>x.addEventListener('input',up));up();
+$('#wa').addEventListener('click',e=>{if(!$('#nm').value.trim()){e.preventDefault();const t=$('#toast');t.textContent='Please add your name first';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400);$('#nm').focus()}});
+</script>
+</body>
+</html>

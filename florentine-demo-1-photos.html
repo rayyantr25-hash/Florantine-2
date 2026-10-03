@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Florentine – C'est La Vie | Rooftop Italian Restaurant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--green:#0f2a22;--esp:#1a1311;--gold:#d8a64a;--blush:#e9b8a8;--ivory:#f5efe3;--mute:#b9b3a3;
+--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',system-ui,sans-serif;box-sizing:border-box;color-scheme:dark;
+padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*,*::before,*::after{box-sizing:inherit;margin:0}
+body{background:var(--esp);color:var(--ivory);font:300 17px/1.6 var(--sans);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.05}
+h2{font-size:clamp(2.2rem,6vw,4rem);font-style:italic}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+/* preloader */
+#pre{position:fixed;inset:0;z-index:99;background:var(--green);display:grid;place-items:center;transition:transform 1s cubic-bezier(.8,0,.2,1)}
+#pre span{font:italic 400 clamp(2.4rem,9vw,5rem)/1 var(--serif);color:var(--gold);animation:pl 1.4s ease both}
+#pre.go{transform:translateY(-100%)}
+@keyframes pl{from{opacity:0;letter-spacing:.3em}to{opacity:1;letter-spacing:0}}
+/* nav */
+nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:14px 22px;transition:background .4s}
+nav.sc{background:rgba(26,19,17,.82);backdrop-filter:blur(12px)}
+.logo{font:italic 500 1.5rem var(--serif)}
+nav div{display:flex;gap:26px;align-items:center;font-size:.9rem}
+nav .l{display:none}
+@media(min-width:760px){nav .l{display:inline}}
+.btn{display:inline-block;padding:13px 28px;border:1px solid var(--gold);border-radius:99px;color:var(--ivory);font-size:.92rem;cursor:pointer;background:none;font-family:var(--sans);position:relative;overflow:hidden;transition:color .35s}
+.btn::before{content:"";position:absolute;inset:0;background:var(--gold);transform:translateY(101%);transition:transform .4s;z-index:-1}
+.btn:hover{color:var(--esp)}.btn:hover::before{transform:none}
+.btn.f{background:var(--gold);color:var(--esp)}.btn.f::before{background:var(--ivory)}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.sky{position:absolute;inset:0;opacity:0;transition:opacity 1.6s;z-index:-3}
+.sky.on{opacity:1}
+.s0{background:linear-gradient(#34524b,#a8806a 70%,#f0b98a)}
+.s1{background:linear-gradient(#245f68,#5f9aa0 55%,#ecc47c)}
+.s2{background:linear-gradient(#08121f,#2c1b3f 55%,#c4703f)}
+.orb{position:absolute;width:clamp(70px,13vw,130px);aspect-ratio:1;border-radius:50%;z-index:-2;background:var(--oc);box-shadow:0 0 90px 30px var(--oc);transition:left 1.6s cubic-bezier(.6,0,.2,1),top 1.6s cubic-bezier(.6,0,.2,1),background 1.6s,box-shadow 1.6s;translate:calc(var(--mx,0)*-14px) calc(var(--my,0)*-10px)}
+.lights{position:absolute;top:13%;left:-2%;width:104%;height:130px;z-index:-1;translate:calc(var(--mx,0)*8px) 0}
+.lights svg{position:absolute;inset:0;width:100%;height:100%}
+.lights path{fill:none;stroke:rgba(245,239,227,.35);stroke-width:1;vector-effect:non-scaling-stroke}
+.lights b{position:absolute;width:9px;height:9px;border-radius:50%;background:#ffe2a0;box-shadow:0 0 14px 5px rgba(255,214,130,.65);animation:tw 3s ease-in-out infinite}
+@keyframes tw{50%{opacity:.35;transform:scale(.75)}}
+.city{position:absolute;bottom:0;left:0;width:100%;height:30%;z-index:-1;fill:var(--esp);translate:calc(var(--mx,0)*-6px) 0;scale:1.04}
+.hero .wrap{padding-bottom:max(70px,12vh);padding-top:140px;width:100%;text-shadow:0 2px 24px rgba(0,0,0,.35)}
+.rate{font-size:.88rem;letter-spacing:.04em;color:var(--ivory);opacity:.85;margin-bottom:18px}
+.rate i{font-style:normal;color:var(--gold)}
+h1{font-size:clamp(3rem,10.5vw,7.6rem);max-width:12ch;font-style:italic}
+h1 .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-right:.12em}
+h1 .w i{display:inline-block;animation:up .9s cubic-bezier(.2,.8,.2,1) both;animation-delay:var(--d)}
+@keyframes up{from{transform:translateY(105%) rotate(4deg)}}
+.sub{max-width:34ch;margin:22px 0 30px;font-size:1.08rem;min-height:3.3em}
+.row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.tod{display:inline-flex;padding:5px;border-radius:99px;background:rgba(15,42,34,.55);backdrop-filter:blur(10px);border:1px solid rgba(245,239,227,.18)}
+.tod button{border:0;background:none;color:var(--ivory);font:400 .88rem var(--sans);padding:9px 18px;border-radius:99px;cursor:pointer;transition:background .4s,color .4s}
+.tod button[aria-selected=true]{background:var(--ivory);color:var(--esp)}
+/* marquee */
+.mq{background:var(--green);border-block:1px solid rgba(216,166,74,.3);overflow:hidden;white-space:nowrap;padding:18px 0}
+.mq div{display:inline-flex;gap:44px;animation:mq 36s linear infinite;font:italic 400 1.7rem var(--serif);color:var(--blush)}
+.mq span::after{content:"\2726";color:var(--gold);margin-left:44px;font-size:.9rem}
+.mq:hover div{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:clamp(70px,12vw,130px) 0}
+.rv{opacity:0;transform:translateY(34px);transition:opacity 1s,transform 1s}
+.rv.in{opacity:1;transform:none}
+/* menu */
+.tabs{display:flex;gap:8px;overflow-x:auto;margin:34px 0 26px;padding-bottom:6px;scrollbar-width:none}
+.tabs button{flex:none;background:none;border:1px solid rgba(245,239,227,.22);color:var(--mute);font:400 .92rem var(--sans);padding:10px 20px;border-radius:99px;cursor:pointer;transition:.3s}
+.tabs button[aria-selected=true]{background:var(--gold);color:var(--esp);border-color:var(--gold)}
+#list{display:grid;gap:4px;animation:fd .6s both}
+@keyframes fd{from{opacity:0;transform:translateY(12px)}}
+.it{position:relative;padding:20px 18px;border-radius:14px;background:radial-gradient(260px circle at var(--x,50%) var(--y,50%),rgba(216,166,74,.16),transparent 70%);border-bottom:1px solid rgba(245,239,227,.1)}
+.it h3{font-size:1.7rem;display:flex;align-items:baseline;gap:12px}
+.it h3::after{content:"";flex:1;border-bottom:1px dotted rgba(245,239,227,.3);order:1}
+.it h3 em{order:2;font:400 .85rem var(--sans);color:var(--gold);font-style:normal}
+.it p{color:var(--mute);max-width:52ch}
+.note{margin-top:18px;font-size:.85rem;color:var(--mute)}
+/* atmosphere */
+.bento{display:grid;gap:14px;margin-top:40px;grid-template-columns:1fr}
+@media(min-width:800px){.bento{grid-template-columns:1.5fr 1fr 1fr;grid-template-rows:260px 220px}.b1{grid-row:span 2}}
+.bn{position:relative;border-radius:22px;padding:26px;display:flex;flex-direction:column;justify-content:flex-end;min-height:200px;overflow:hidden;transition:transform .5s}
+.bn:hover{transform:translateY(-6px)}
+.bn::before{content:"";position:absolute;inset:0;z-index:-1;transition:transform 1.2s}
+.bn:hover::before{transform:scale(1.12)}
+.bn{isolation:isolate}
+.b1::before{background:radial-gradient(circle at 70% 25%,#ffd58a 0 8%,transparent 9%),linear-gradient(#1a2f4a,#4a2a4d 60%,#c4703f)}
+.b2::before{background:radial-gradient(circle at 30% 30%,#7a4a2e,#2a1a12)}
+.b3::before{background:linear-gradient(135deg,#e9b8a8,#9a5a62)}
+.b4{grid-column:span 1}.b4::before{background:linear-gradient(135deg,#1f4a3c,#0f2a22)}
+@media(min-width:800px){.b4{grid-column:span 2}}
+.bn h3{font-size:1.9rem;font-style:italic}.bn p{font-size:.95rem;max-width:36ch}
+.know{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.know span{padding:8px 16px;border:1px solid rgba(245,239,227,.18);border-radius:99px;font-size:.88rem;color:var(--mute)}
+/* reserve */
+.res{background:var(--green)}
+.rg{display:grid;gap:44px}
+@media(min-width:860px){.rg{grid-template-columns:1fr 1fr;align-items:center}}
+form{display:grid;gap:14px}
+label{font-size:.85rem;color:var(--mute);display:grid;gap:6px}
+input,select,textarea{width:100%;background:rgba(245,239,227,.06);border:1px solid rgba(245,239,227,.2);border-radius:12px;padding:13px 14px;color:var(--ivory);font:300 1rem var(--sans)}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);outline:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.step{display:flex;align-items:center;justify-content:space-between;border:1px solid rgba(245,239,227,.2);border-radius:12px;padding:5px 8px}
+.step button{width:36px;height:36px;border-radius:50%;border:0;background:rgba(245,239,227,.1);color:var(--ivory);font-size:1.2rem;cursor:pointer}
+#toast{position:fixed;left:50%;bottom:24px;translate:-50% 140%;background:var(--ivory);color:var(--esp);padding:12px 22px;border-radius:99px;z-index:30;transition:translate .5s;font-size:.92rem}
+#toast.show{translate:-50% 0}
+footer{padding:44px 0;text-align:center;color:var(--mute);font-size:.88rem}
+footer a{color:var(--gold);border-bottom:1px solid}
+#cur{position:fixed;width:34px;height:34px;border:1px solid var(--gold);border-radius:50%;pointer-events:none;z-index:98;translate:-100px -100px;transition:width .25s,height .25s,background .25s;mix-blend-mode:difference;display:none}
+#cur.h{width:64px;height:64px;background:rgba(216,166,74,.25)}
+@media(pointer:fine){#cur{display:block}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+/* photo layer */
+.orb,.city,.lights{display:none}
+.s0{background:linear-gradient(rgba(20,14,10,.35),rgba(20,14,10,.72)),url(https://images.unsplash.com/photo-1633734605314-ca42706d2e8c?auto=format&fit=crop&w=2400&q=85) center/cover}
+.s1{background:linear-gradient(rgba(10,30,34,.3),rgba(15,14,10,.7)),url(https://images.unsplash.com/photo-1759050475187-674550fa911e?auto=format&fit=crop&w=2400&q=85) center/cover}
+.s2{background:linear-gradient(rgba(8,12,24,.35),rgba(10,8,12,.78)),url(https://images.unsplash.com/photo-1563138216-8ff2e182ccbd?auto=format&fit=crop&w=2400&q=85) center/cover}
+.sky{transform:scale(1.06);transition:opacity 1.6s,transform 9s linear}.sky.on{transform:scale(1)}
+.b1::before{background:linear-gradient(transparent 35%,rgba(10,8,8,.82)),url(https://images.unsplash.com/photo-1563138216-8ff2e182ccbd?auto=format&fit=crop&w=1600&q=85) center/cover}
+.b2::before{background:linear-gradient(transparent 30%,rgba(10,8,8,.82)),url(https://images.unsplash.com/photo-1613674768015-96f159a6c147?auto=format&fit=crop&w=1200&q=85) center/cover}
+.b3::before{background:linear-gradient(transparent 30%,rgba(10,8,8,.82)),url(https://images.unsplash.com/photo-1631206753348-db44968fd440?auto=format&fit=crop&w=1200&q=85) center/cover}
+.b4::before{background:linear-gradient(90deg,rgba(10,8,8,.8),rgba(10,8,8,.2)),url(https://images.unsplash.com/photo-1558473399-6773c890474c?auto=format&fit=crop&w=1600&q=85) center/cover}
+.mgx{display:grid;gap:30px}
+@media(min-width:900px){.mgx{grid-template-columns:1.1fr .9fr;gap:50px;align-items:start}.mimg{position:sticky;top:100px}}
+.mimg{border-radius:200px 200px 18px 18px;overflow:hidden;aspect-ratio:4/5;background:var(--green)}
+.mimg img{width:100%;height:100%;object-fit:cover;transition:opacity .5s,transform 1.2s}
+.mimg:hover img{transform:scale(1.06)}
+</style>
+</head>
+<body>
+<div id="pre"><span>Florentine</span></div>
+<div id="cur"></div>
+<nav id="nav">
+  <a class="logo" href="#top">Florentine</a>
+  <div><a class="l" href="#menu">Menu</a><a class="l" href="#vibe">The rooftop</a><a class="btn" href="#reserve">Reserve a table</a></div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="sky s0"></div><div class="sky s1"></div><div class="sky s2"></div>
+  <div class="orb" id="orb"></div>
+  <div class="lights" id="lights" aria-hidden="true"><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M0 4Q50 40 100 4"/></svg></div>
+  <svg class="city" viewBox="0 0 1000 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 200V120h50V90h40v40h40V70h30v60h60V100h50V60h35v70h55V110h60V80h40v50h50V95h45V55h30v75h60V105h55V85h40v45h60V100h50V120h70V200z"/></svg>
+  <div class="wrap">
+    <p class="rate"><i>4.0</i> on Google from 405 reviews &nbsp;&nbsp;|&nbsp;&nbsp; Italian &amp; coffee house &nbsp;&nbsp;|&nbsp;&nbsp; Rs 2,000–3,000 per person</p>
+    <h1 id="hl" aria-live="polite"></h1>
+    <p class="sub" id="sub"></p>
+    <div class="row">
+      <a class="btn f" href="#reserve">Reserve a table</a>
+      <div class="tod" role="tablist" aria-label="Time of day"></div>
+    </div>
+  </div>
+</header>
+
+<div class="mq" aria-hidden="true"><div id="mq"></div></div>
+
+<section id="menu">
+  <div class="wrap">
+    <h2 class="rv">A table of small plates<br>and slow coffee</h2>
+    <div class="mgx"><div><div class="tabs" id="tabs" role="tablist"></div>
+    <div id="list"></div></div><div class="mimg"><img id="mimg" alt="Dish from the menu" loading="lazy"></div></div>
+    <p class="note">Sample menu for this concept. The real menu and photos come from the restaurant.</p>
+  </div>
+</section>
+
+<section id="vibe" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="rv">Cosy by day,<br>romantic after dark</h2>
+    <div class="bento rv">
+      <div class="bn b1"><h3>Rooftop seating</h3><p>Open air, string lights and the city below. Ask for a table outside when you book.</p></div>
+      <div class="bn b2"><h3>Coffee &amp; tea</h3><p>A long tea list and coffee worth sitting with.</p></div>
+      <div class="bn b3"><h3>Desserts</h3><p>Finish with something sweet, even if you said you wouldn't.</p></div>
+      <div class="bn b4"><h3>Families, friends and groups</h3><p>High chairs, a quiet corner for solo dining, and tables for larger parties.</p></div>
+    </div>
+    <div class="know rv"><span>Free Wi-Fi</span><span>Free parking</span><span>Dine-in, takeaway and delivery</span><span>Catering</span><span>Cards and NFC payments</span><span>Reservations accepted</span></div>
+  </div>
+</section>
+
+<section class="res" id="reserve">
+  <div class="wrap rg">
+    <div class="rv">
+      <h2>Save your table</h2>
+      <p style="margin-top:18px;max-width:38ch;color:var(--mute)">Fill in the details and we open WhatsApp with your request ready to send. The team confirms by message.</p>
+    </div>
+    <form id="f" class="rv" onsubmit="return false">
+      <label>Your name<input id="nm" autocomplete="name" placeholder="Full name"></label>
+      <div class="two">
+        <label>Date<input id="dt" type="date"></label>
+        <label>Time<select id="tm"><option>9:00 AM</option><option>11:00 AM</option><option>1:00 PM</option><option>3:00 PM</option><option>6:00 PM</option><option selected>8:00 PM</option><option>10:00 PM</option></select></label>
+      </div>
+      <label>Guests<div class="step"><button type="button" id="mn" aria-label="Fewer guests">−</button><b id="gc">2</b><button type="button" id="pl" aria-label="More guests">+</button></div></label>
+      <label>Seating<select id="st"><option>Rooftop</option><option>Indoor</option><option>No preference</option></select></label>
+      <a class="btn f" id="wa" href="#" target="_blank" rel="noopener" style="text-align:center">Send on WhatsApp</a>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap">Demo concept designed by <a href="https://rayyantr25-hash.github.io/Rayvora-Studios/" target="_blank" rel="noopener">Rayvora Studios</a></div></footer>
+<div id="toast" role="status"></div>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+// preloader
+addEventListener('load',()=>setTimeout(()=>{$('#pre').classList.add('go');start()},1300));
+setTimeout(()=>$('#pre').classList.add('go'),3500);
+// nav
+addEventListener('scroll',()=>$('#nav').classList.toggle('sc',scrollY>40),{passive:true});
+// time of day
+const T=[
+{k:'Morning',h:'Slow mornings above the city',p:'Fresh coffee, warm pastries and brunch plates in the early light.',x:'18%',y:'52%',c:'#f6c177'},
+{k:'Afternoon',h:'Long lunches in the sun',p:'Pasta, salads and something cold, with the rooftop breeze.',x:'48%',y:'9%',c:'#ffe6a3'},
+{k:'Night',h:'Candlelit nights under the lights',p:'Dinner, dessert and a last cup of tea while the city glows.',x:'76%',y:'12%',c:'#efe9d6'}];
+let cur=-1,auto=true,timer;
+const tod=$('.tod');
+T.forEach((t,i)=>{const b=document.createElement('button');b.textContent=t.k;b.role='tab';b.onclick=()=>{auto=false;clearInterval(timer);set(i)};tod.append(b)});
+function set(i){
+  if(i===cur)return;cur=i;const t=T[i];
+  $$('.sky').forEach((s,j)=>s.classList.toggle('on',j===i));
+  $$('.tod button').forEach((b,j)=>b.setAttribute('aria-selected',j===i));
+  const o=$('#orb');o.style.left=t.x;o.style.top=t.y;o.style.setProperty('--oc',t.c);
+  $('#hl').innerHTML=t.h.split(' ').map((w,j)=>`<span class="w"><i style="--d:${j*.07}s">${w}</i></span>`).join(' ');
+  $('#sub').textContent=t.p;
+  $('#lights').style.opacity=i===0?.55:i===1?.4:1;
+}
+function start(){set(2);let n=2;timer=setInterval(()=>{if(auto&&!matchMedia('(prefers-reduced-motion:reduce)').matches){n=(n+1)%3;set(n)}},7000)}
+set(2);
+// string lights
+(()=>{const L=$('#lights');for(let n=0;n<=16;n++){const t=n/16,y=4+72*t*(1-t),b=document.createElement('b');
+b.style.left=`calc(${t*100}% - 4px)`;b.style.top=`calc(${y/30*100}% - 2px)`;b.style.animationDelay=(Math.random()*3).toFixed(2)+'s';L.append(b)}})();
+// parallax
+$('.hero').addEventListener('pointermove',e=>{const r=e.currentTarget.getBoundingClientRect();
+e.currentTarget.style.setProperty('--mx',((e.clientX-r.left)/r.width-.5).toFixed(3));
+e.currentTarget.style.setProperty('--my',((e.clientY-r.top)/r.height-.5).toFixed(3))});
+// marquee
+$('#mq').innerHTML=['Great coffee','Great dessert','Great tea selection','Rooftop seating','Breakfast, lunch and dinner','Late-night food','Great coffee','Great dessert','Great tea selection','Rooftop seating','Breakfast, lunch and dinner','Late-night food'].map(s=>`<span>${s}</span>`).join('');
+// menu
+const M={
+'Breakfast':[['Shakshuka al Forno','Baked eggs in spiced tomato, herbs, toasted sourdough'],['Ricotta Hotcakes','Whipped ricotta, honey, seasonal fruit'],['Croissant Florentine','Soft scrambled eggs, spinach, parmesan cream'],['Avocado Focaccia','Smashed avocado, chilli oil, poached egg']],
+'Pasta':[['Truffle Tagliatelle','Fresh ribbons, mushroom cream, shaved parmesan'],['Penne Arrabbiata','Roasted tomato, garlic, chilli, basil'],['Creamy Pesto Chicken','Basil pesto, grilled chicken, pine nuts'],['Lasagna della Casa','Slow-cooked beef ragù, béchamel, mozzarella']],
+'Mains':[['Herb-Crusted Chicken','Lemon butter sauce, rosemary potatoes'],['Wood-Fired Margherita','San Marzano tomato, fior di latte, basil'],['Grilled Fish','Citrus glaze, charred greens, saffron rice'],['Beef Medallions','Peppercorn sauce, creamy mash']],
+'Dessert':[['Classic Tiramisu','Espresso-soaked savoiardi, mascarpone, cocoa'],['Pistachio Panna Cotta','Vanilla cream, crushed pistachio, berry coulis'],['Warm Chocolate Fondant','Molten centre, vanilla gelato'],['Affogato','Vanilla gelato drowned in hot espresso']],
+'Coffee & Tea':[['Flat White','Double shot, silky milk'],['Cardamom Latte','Warm spice, steamed milk, a dusting of cinnamon'],['Moroccan Mint Tea','Fresh mint, green tea, served in a pot'],['Kashmiri Chai','Pink tea, crushed pistachio, slow simmered']]};
+const tabs=$('#tabs');
+Object.keys(M).forEach((k,i)=>{const b=document.createElement('button');b.textContent=k;b.role='tab';b.onclick=()=>show(k,b);tabs.append(b);if(!i)show(k,b)});
+const IMG={'Breakfast':'https://images.unsplash.com/photo-1637154199148-62dd57c5b6e0?auto=format&fit=crop&w=1400&q=85','Breakfast & brunch':'https://images.unsplash.com/photo-1637154199148-62dd57c5b6e0?auto=format&fit=crop&w=1400&q=85','Pasta':'https://images.unsplash.com/photo-1473093226795-af9932fe5856?auto=format&fit=crop&w=1400&q=85','Pasta & pizza':'https://images.unsplash.com/photo-1473093226795-af9932fe5856?auto=format&fit=crop&w=1400&q=85','Mains':'https://images.unsplash.com/photo-1473093226795-af9932fe5856?auto=format&fit=crop&w=1400&q=85','Dessert':'https://images.unsplash.com/photo-1631206753348-db44968fd440?auto=format&fit=crop&w=1400&q=85','Coffee & Tea':'https://images.unsplash.com/photo-1613674768015-96f159a6c147?auto=format&fit=crop&w=1400&q=85','Coffee & tea':'https://images.unsplash.com/photo-1613674768015-96f159a6c147?auto=format&fit=crop&w=1400&q=85'};
+function show(k,b){const im=$('#mimg');im.style.opacity=0;setTimeout(()=>{im.src=IMG[k];im.onload=()=>im.style.opacity=1},250);$$('#tabs button').forEach(x=>x.setAttribute('aria-selected',x===b));const l=$('#list');
+l.style.animation='none';l.offsetWidth;l.style.animation='';
+l.innerHTML=M[k].map(([n,d])=>`<div class="it"><h3>${n}</h3><p>${d}</p></div>`).join('')}
+$('#list').addEventListener('pointermove',e=>{const it=e.target.closest('.it');if(!it)return;const r=it.getBoundingClientRect();it.style.setProperty('--x',e.clientX-r.left+'px');it.style.setProperty('--y',e.clientY-r.top+'px')});
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+$$('.rv').forEach(el=>io.observe(el));
+// cursor
+const c=$('#cur');addEventListener('pointermove',e=>{c.style.translate=`${e.clientX-17}px ${e.clientY-17}px`;c.classList.toggle('h',!!e.target.closest('a,button,select,input'))});
+// reservation
+let g=2;const d=$('#dt');d.value=new Date(Date.now()+864e5).toISOString().slice(0,10);d.min=new Date().toISOString().slice(0,10);
+const up=()=>{$('#gc').textContent=g;const m=`Hi Florentine, I'd like to reserve a table.\nName: ${$('#nm').value||'-'}\nDate: ${d.value}\nTime: ${$('#tm').value}\nGuests: ${g}\nSeating: ${$('#st').value}`;$('#wa').href='https://wa.me/?text='+encodeURIComponent(m)};
+$('#mn').onclick=()=>{g=Math.max(1,g-1);up()};$('#pl').onclick=()=>{g=Math.min(20,g+1);up()};
+$$('#f input,#f select').forEach(x=>x.addEventListener('input',up));up();
+$('#wa').addEventListener('click',e=>{if(!$('#nm').value.trim()){e.preventDefault();const t=$('#toast');t.textContent='Please add your name first';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400);$('#nm').focus()}});
+</script>
+</body>
+</html>
